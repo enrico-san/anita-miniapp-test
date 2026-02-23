@@ -29,7 +29,7 @@ const createApiStore = () => {
         // Convertiamo il codice lingua ('it'|'en') in un nome leggibile per il prompt
         const languageName = language === 'en' ? 'English' : (language === 'it' ? 'Italiano' : language);
 
-        const response = await fetch(`${backend}/chat`, {
+        const response = await fetch(`https://httpbin.org/post`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ messages, language: languageName })
